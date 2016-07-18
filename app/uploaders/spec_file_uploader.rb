@@ -16,6 +16,10 @@ class SpecFileUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def getUrl
+    return store_dir
+  end
+
   def extension_whitelist
     %w(js)
   end

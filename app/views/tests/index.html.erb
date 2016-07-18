@@ -1,0 +1,23 @@
+<table id="tests">
+  <tr>
+    <th>Test ID</th>
+    <th>User</th>
+    <th>Test Page</th>
+    <th>Test Spec File</th>
+  </tr>
+
+  <% if @tests.length == 0 %>
+    </table>
+    <p>No tests here.</p>
+  <% else %>
+    <% @tests.each do |test| %>
+      <tr>
+        <td><%= test.id %></td>
+        <td><%= test.email %></td>
+        <td><%= test.pageUrl %></td>
+        <td><%= test.specFileUrl %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+<a href="/tests/new">Create new test</a>
